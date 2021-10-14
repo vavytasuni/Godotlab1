@@ -1,0 +1,296 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://models/New folder/Floor.glb" type="PackedScene" id=1]
+[ext_resource path="res://models/New folder/InterogationChair.glb" type="PackedScene" id=2]
+[ext_resource path="res://models/New folder/InterogationTable.glb" type="PackedScene" id=3]
+[ext_resource path="res://models/New folder/Donuts/Donut1.glb" type="PackedScene" id=4]
+[ext_resource path="res://models/Doors/door.glb" type="PackedScene" id=5]
+[ext_resource path="res://models/New folder/untitled.glb" type="PackedScene" id=6]
+[ext_resource path="res://models/TheGuns4.gltf" type="PackedScene" id=7]
+[ext_resource path="res://models/Teapot.glb" type="PackedScene" id=8]
+[ext_resource path="res://models/Window/window.glb" type="PackedScene" id=9]
+[ext_resource path="res://models/wall/mainwall/TheMainWall.glb" type="PackedScene" id=10]
+[ext_resource path="res://models/Sofa2.gltf" type="PackedScene" id=11]
+[ext_resource path="res://models/New folder/Donuts/uploads_files_2000092_Donut (1).fbx" type="PackedScene" id=12]
+[ext_resource path="res://bachscenes/Cabinetscene.tscn" type="PackedScene" id=13]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 0.839322, 1 )
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 1.10186, 1 )
+
+[sub_resource type="PhysicsMaterial" id=5]
+
+[sub_resource type="CylinderShape" id=6]
+
+[sub_resource type="BoxShape" id=7]
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.04887, 1, 1 )
+
+[sub_resource type="BoxShape" id=9]
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 0.999918, 0.0122927, -0.00348836, -0.012283, 0.999921, 0.00277866, 0.00352225, -0.00273557, 0.99999, -0.114702, 0.0432043, -0.0365326 )
+
+[node name="AreaFloor" type="Area" parent="."]
+transform = Transform( 24.4793, -0.000253537, 0.00900371, -0.0324177, 0.212057, 0.000110939, 0.0091996, 8.83359e-07, 26.5387, -0.0906238, 0.287184, -0.0640278 )
+
+[node name="RigidBodyFloor" type="RigidBody" parent="AreaFloor"]
+transform = Transform( 1, -1.6982e-12, 0, -1.0361e-08, 1, 2.98023e-08, 0, 0, 1, 0, 0, 0 )
+mode = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="AreaFloor/RigidBodyFloor"]
+transform = Transform( 0.19905, 7.91402e-11, -5.23869e-10, 2.52039e-08, 0.995248, -1.49012e-08, -4.65661e-10, -1.81899e-11, 0.19905, 0.00010915, -2.7362, -0.00602523 )
+shape = SubResource( 1 )
+
+[node name="Floor" parent="AreaFloor/RigidBodyFloor" instance=ExtResource( 1 )]
+transform = Transform( 0.0434687, 1.07674e-05, -1.01863e-10, -5.48171e-08, 9.1854, 0, 1.30967e-10, -1.30967e-10, 0.0366984, 0.000582614, -1.69929, 0.00259535 )
+
+[node name="RigidBodyInterogationChair" type="RigidBody" parent="."]
+transform = Transform( 1, 1.22782e-10, 0, 5.00222e-11, 1, 2.32831e-10, -2.32831e-10, -4.65661e-10, 1, -0.0349095, 3.57628e-07, -3.86402 )
+
+[node name="InterogationChair" parent="RigidBodyInterogationChair" instance=ExtResource( 2 )]
+transform = Transform( 1, 1.22782e-10, 0, 4.91127e-11, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBodyInterogationChair"]
+transform = Transform( 0.351947, 1.59849e-07, -6.48405e-05, -1.66374e-07, 0.320943, 5.03599e-05, 6.17635e-05, -4.37438e-05, 0.369482, -0.0071187, 0.335577, 0.00164366 )
+shape = SubResource( 2 )
+
+[node name="InterogationTable" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.999135, 0, 0, 0, 0.999135, 0, 0, 0, 0.999135, 0, 0, -2.21342 )
+
+[node name="StaticBodyChair" type="RigidBody" parent="."]
+transform = Transform( -0.999999, -2.37033e-08, -8.6613e-08, -7.75799e-09, 2.13413, 0, 9.05711e-08, 3.72529e-09, -1, 0.797882, 0.382276, -0.990896 )
+
+[node name="BasicChair" parent="StaticBodyChair" instance=ExtResource( 6 )]
+transform = Transform( 1, -1.2933e-08, 2.32831e-10, 2.06865e-09, 0.843433, -2.32831e-10, 3.25963e-09, 2.79397e-09, 1, -0.0134913, -0.177983, -0.0296798 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyChair"]
+transform = Transform( 0.225714, 1.04592e-11, 0, 1.81103e-10, 0.227547, 7.567e-10, 2.91038e-10, -3.49246e-10, 0.195442, 7.7486e-07, 0.0158871, -0.00555801 )
+shape = SubResource( 3 )
+
+[node name="StaticBodyChair2" type="RigidBody" parent="."]
+transform = Transform( -0.999999, -3.11647e-08, -8.6613e-08, -7.75799e-09, 2.13413, -9.31323e-10, 9.05711e-08, 1.39698e-09, -1, -0.551287, 0.36569, -0.986189 )
+
+[node name="BasicChair" parent="StaticBodyChair2" instance=ExtResource( 6 )]
+transform = Transform( 1, -1.2933e-08, 2.32831e-10, 2.06865e-09, 0.843433, -2.32831e-10, 3.25963e-09, 2.79397e-09, 1, -0.0134913, -0.177983, -0.0296798 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyChair2"]
+transform = Transform( 0.225714, 1.04592e-11, 0, 1.81103e-10, 0.227547, 7.567e-10, 2.91038e-10, -3.49246e-10, 0.195442, 7.7486e-07, 0.0158871, -0.00555801 )
+shape = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, -2.68828e-08, -1.04774e-08, 9.78616e-10, 1, -1.6531e-08, -6.98492e-10, 0, 1, -31.0172, 4.16458, 0.438876 )
+
+[node name="rbTheMainWall" type="RigidBody" parent="."]
+transform = Transform( 24.224, 0.428763, -0.0134161, 0.230971, 10.0974, 7.76921e-05, -0.0670805, 0.000721065, 1.00005, -0.0559659, 1.95964, -4.65567 )
+mode = 1
+
+[node name="TheMainWall" parent="rbTheMainWall" instance=ExtResource( 10 )]
+transform = Transform( 0.206498, -0.00350748, 0.000554189, -0.00472361, 0.198151, -2.03708e-05, 0.0138548, -0.000378146, 0.999991, 0.00574796, -0.194205, 0.000330925 )
+
+[node name="CollisionShape" type="CollisionShape" parent="rbTheMainWall"]
+transform = Transform( 0.209973, 5.77529e-11, 1.30967e-10, -2.22599e-10, 0.207645, -5.20231e-10, -4.65661e-10, 1.39698e-09, 0.116032, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="rbTheMainWall2" type="RigidBody" parent="."]
+transform = Transform( 21.0882, 0.430059, -0.0112067, 0.231669, 4.1663, -0.00167087, -0.0560337, -0.0155086, 1.00003, 0.671635, 0.740312, -0.0207282 )
+mode = 1
+
+[node name="TheMainWall" parent="rbTheMainWall2" instance=ExtResource( 10 )]
+transform = Transform( 0.206498, -0.00350748, 0.000554189, -0.00472361, 0.198151, -2.03708e-05, 0.0138548, -0.000378146, 0.999991, 0.00574796, -0.194205, 0.000330925 )
+
+[node name="CollisionShape" type="CollisionShape" parent="rbTheMainWall2"]
+transform = Transform( 0.209973, 5.77529e-11, 1.30967e-10, -2.22599e-10, 0.207645, -5.20231e-10, -4.65661e-10, 1.39698e-09, 0.116032, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="RigidBodyDoor" type="RigidBody" parent="."]
+transform = Transform( -0.0539876, 0.00147542, 1.79883, 0.00601746, 1.49999, -0.00151159, -1.49902, 0.00596822, -0.0647916, -4.376, 0, -0.029 )
+mode = 1
+
+[node name="Door" parent="RigidBodyDoor" instance=ExtResource( 5 )]
+transform = Transform( 1, 4.65661e-10, 0, 8.14907e-10, 1, 4.27463e-09, 0, 1.49157e-10, 1, 0, 0.0547816, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBodyDoor"]
+transform = Transform( 0.104995, 0.00138412, -0.0105841, 0.0013841, 0.999889, -0.00988049, -0.00735009, -0.00686152, 0.375862, 0.00250365, 1.13005, -0.0280614 )
+shape = SubResource( 4 )
+
+[node name="window" parent="." instance=ExtResource( 9 )]
+transform = Transform( -7.11489, 0.00103369, 0.000434216, -0.00264176, 2.70001, 5.33368e-06, 0.000750259, -3.60701e-06, -4, 0.765727, 1.784, -0.00963519 )
+
+[node name="StaticBodyDonut1" type="RigidBody" parent="."]
+transform = Transform( -7.45058e-08, -2.32621e-08, -1.2867, 1.58325e-08, 1.46, -6.30434e-08, 1.66524, 2.32831e-09, -5.6345e-08, -1.81743, 1.62534, 0.73276 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut1"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut1" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="RigidBodyTeapot" type="RigidBody" parent="."]
+transform = Transform( 2, -0.00265774, 0.000758569, 0.00265797, 2, -0.000595828, -0.000757776, 0.000596868, 2, -1.33728, 1.70454, 0.577293 )
+
+[node name="Teapot" parent="RigidBodyTeapot" instance=ExtResource( 8 )]
+transform = Transform( 1, 9.61336e-10, 2.32831e-10, -1.02227e-09, 1, 2.32831e-10, 2.32831e-10, 4.65661e-10, 1, 5.96046e-08, 5.96046e-08, -2.98023e-08 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBodyTeapot"]
+transform = Transform( 0.246521, 0.000124405, -0.00382234, 0.000441866, 0.0580955, 0.00240479, -0.000663966, 0.000117609, 0.19982, 0.170704, 0.0567924, 0.0165243 )
+shape = SubResource( 7 )
+
+[node name="RigidBodySofa" type="RigidBody" parent="."]
+transform = Transform( -14.0246, 0.0941154, 0.0243725, -0.125488, 2.86344, 0.0021422, 0.0324996, -0.0021422, -3.52543, 1.87353, 0.553955, 4.04034 )
+
+[node name="Sofa2" parent="RigidBodySofa" instance=ExtResource( 11 )]
+transform = Transform( 0.285303, 0.00703188, 0.00147505, 0.0125011, 1.048, -0.000571988, 0.00262233, -0.000571991, 0.850975, -0.000992015, -0.120139, 0.0442753 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBodySofa"]
+transform = Transform( -0.194, 0.003, 0.001, 0.00999999, 0.17, 5.82077e-11, 0.002, -1.74623e-10, 0.242, -0.000935629, -0.00866415, -0.00685561 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="RigidBodySofa"]
+transform = Transform( 0.170909, -0.000245704, -0.000809567, -0.000415456, 0.152352, -0.0238963, -0.00151454, -0.0284902, -0.0542959, 0.0021495, 0.275388, -0.148878 )
+shape = SubResource( 9 )
+
+[node name="StaticBodypdonut" type="RigidBody" parent="."]
+transform = Transform( -9.26666e-08, -3.86881e-08, -1.2867, 1.25729e-08, 2.19001, -3.70037e-08, 1.66525, -8.84756e-09, -4.65661e-08, -2.44396, 1.67298, 0.754821 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodypdonut"]
+transform = Transform( 0.0578014, 0, -4.44089e-16, 0, 0.018, 0, 4.44089e-16, 0, 0.079611, -0.00387311, -0.0155514, 0.000504017 )
+shape = SubResource( 6 )
+
+[node name="pdonut" parent="StaticBodypdonut" instance=ExtResource( 12 )]
+transform = Transform( 1.12457e-07, 4.88944e-09, -0.60051, -1.1667e-08, 0.547945, 1.39698e-09, 0.777182, 2.77987e-08, 1.50176e-07, -0.0106333, -0.0126724, 0.00565326 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, -1.59489e-07, -5.23869e-08, 1.17656e-07, 0.65957, 0.751643, -9.61591e-08, -0.751643, 0.65957, 0.439634, 6.72877, 5.40514 )
+fov = 66.6469
+
+[node name="Cabinet2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 11.0586, 0.0868799, -0.0304079, 0.0868796, 3.99391, 0.00416893, -0.0304079, 0.00416886, 2.35822, 2.822, 0.8, 2.879 )
+
+[node name="Cabinet1" parent="." instance=ExtResource( 13 )]
+transform = Transform( 11.0586, 0.0868799, -0.0304081, 0.0868796, 3.99391, 0.00416893, -0.0304081, 0.00416885, 2.35822, -1.52891, 0.787625, 2.8308 )
+
+[node name="StaticBodyDonut2" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -2.70002e-08, -1.2867, 1.86265e-08, 1.46, -7.42193e-08, 1.66524, 4.65661e-10, -5.6345e-08, -1.81829, 1.62601, 0.488405 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut2"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut2" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut3" type="RigidBody" parent="."]
+transform = Transform( -7.54371e-08, -2.51275e-08, -1.2867, 1.67638e-08, 1.46, -6.67687e-08, 1.66524, 1.86265e-09, -5.6345e-08, -2.09748, 1.6219, 0.733737 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut3"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut3" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut4" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -2.70002e-08, -1.2867, 1.86265e-08, 1.46, -7.42193e-08, 1.66524, 4.65661e-10, -5.6345e-08, -2.09834, 1.62257, 0.489381 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut4"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut4" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut5" type="RigidBody" parent="."]
+transform = Transform( -7.54371e-08, -2.51275e-08, -1.2867, 1.67638e-08, 1.46, -6.67687e-08, 1.66524, 1.86265e-09, -5.6345e-08, -1.8185, 1.71312, 0.733004 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut5"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut5" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut7" type="RigidBody" parent="."]
+transform = Transform( -7.63685e-08, -2.69956e-08, -1.2867, 1.76951e-08, 1.46, -7.0494e-08, 1.66524, 9.31323e-10, -5.6345e-08, -2.09856, 1.70968, 0.73398 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut7"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut7" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut8" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -2.88692e-08, -1.2867, 2.00234e-08, 1.46, -7.98073e-08, 1.66524, -4.65661e-10, -5.6345e-08, -2.09942, 1.71035, 0.489625 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut8"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut8" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut9" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -2.88646e-08, -1.2867, 1.90921e-08, 1.46, -7.6082e-08, 1.66524, 0, -5.6345e-08, -1.81981, 1.81972, 0.7333 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut9"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut9" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut10" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -3.25736e-08, -1.2867, 2.23517e-08, 1.46, -8.9135e-08, 1.66524, -1.39698e-09, -5.54137e-08, -1.81974, 1.74452, 0.488733 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut10"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut10" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut11" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -2.88692e-08, -1.2867, 2.00234e-08, 1.46, -7.98073e-08, 1.66524, -4.65661e-10, -5.6345e-08, -2.09987, 1.81628, 0.734277 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut11"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut11" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="StaticBodyDonut12" type="RigidBody" parent="."]
+transform = Transform( -7.72998e-08, -3.63279e-08, -1.2867, 2.18861e-08, 1.46, -8.72597e-08, 1.66524, -1.39698e-09, -5.58794e-08, -2.10072, 1.81695, 0.489921 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBodyDonut12"]
+transform = Transform( 0.0578014, 7.27596e-12, 1.45519e-11, -2.91038e-11, 0.018, -3.88809e-11, 0, -2.65743e-12, 0.079611, -0.00387317, -0.0155513, 0.000503898 )
+shape = SubResource( 6 )
+
+[node name="Donut1" parent="StaticBodyDonut12" instance=ExtResource( 4 )]
+transform = Transform( 0.599693, 9.31323e-10, 4.65661e-10, -4.65661e-10, 0.820795, 2.50748e-09, 6.98492e-10, -4.02997e-09, 0.776121, 0.0669737, -0.0454328, -0.0289046 )
+
+[node name="TheGuns4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.0245044, 0.143946, -1.62742, -0.00925084, -2.3663, 0.0102986, -1.37441, -0.00303576, -0.0278799, 2.21836, 1.63945, 0.71727 )

@@ -1,0 +1,11 @@
+1 TheMainWall
+2 Door
+3 Window
+4 Sofa
+5 Teapot
+6 BasicChair
+7 InterogationChair
+8 Pink donut
+9 Chocholate donut
+10 Cabinet
+11 Guns
