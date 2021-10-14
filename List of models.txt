@@ -1,11 +1,12 @@
-1 TheMainWall
-2 Door
-3 Window
-4 Sofa
-5 Teapot
-6 BasicChair
-7 InterogationChair
-8 Pink donut
-9 Chocholate donut
-10 Cabinet
-11 Guns
+1 Cabinet https://www.cgtrader.com/free-3d-models/furniture/cabinet/sideboard-e3e30890-b91f-4deb-8cd5-5b5c096e47dd
+2 Door https://www.cgtrader.com/free-3d-models/architectural/door/classical-door-classic-door
+3 Window https://www.cgtrader.com/free-3d-models/architectural/window/aluprof-mb-86se-004-m-0233
+4 Sofa https://www.cgtrader.com/free-3d-models/furniture/sofa/modern-1c6ff47f-a986-42bb-a9cf-604613f2f24c
+5 Teapot https://www.cgtrader.com/free-3d-models/interior/kitchen/grey-bliss-set
+6 BasicChair https://www.cgtrader.com/free-3d-models/furniture/chair/eames-dsw
+7 InterogationChair https://www.cgtrader.com/items/3012857/download-page
+8 Pink donut https://www.cgtrader.com/free-3d-models/food/miscellaneous/low-poly-donut-a6633ba4-4f8c-40a0-8655-f986a9464b07
+9 Chocholate donut https://www.cgtrader.com/free-3d-models/food/miscellaneous/chocodonut
+10 TheMainWall https://www.creativefabrica.com/product/brick-wall-texture/
+11 Guns https://www.cgtrader.com/free-3d-models/military/gun/hector-gauge-8
+12 Table https://www.cgtrader.com/items/728127/download-page

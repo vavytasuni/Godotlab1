@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://models/New folder/Floor.glb" type="PackedScene" id=1]
+[ext_resource path="res://models/Floor.glb" type="PackedScene" id=1]
 [ext_resource path="res://models/New folder/InterogationChair.glb" type="PackedScene" id=2]
 [ext_resource path="res://models/New folder/InterogationTable.glb" type="PackedScene" id=3]
 [ext_resource path="res://models/New folder/Donuts/Donut1.glb" type="PackedScene" id=4]
